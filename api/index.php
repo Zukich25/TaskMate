@@ -17,13 +17,21 @@ foreach ($dirs as $dir) {
 
 // Ensure database is available and writable in /tmp
 $tmpDb = '/tmp/database.sqlite';
-if (!file_exists($tmpDb)) {
-    $srcDb = __DIR__ . '/../database/database.sqlite';
-    if (file_exists($srcDb)) {
+$srcDb = __DIR__ . '/../database/database.sqlite';
+
+if (!file_exists($tmpDb) || filesize($tmpDb) < 1000) {
+    if (file_exists($srcDb) && filesize($srcDb) > 0) {
         copy($srcDb, $tmpDb);
+        chmod($tmpDb, 0666);
     } else {
         touch($tmpDb);
     }
+}
+
+// Ensure HTTPS detection behind Vercel reverse proxy
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = '443';
 }
 
 // Set runtime environment variables for Vercel Serverless
