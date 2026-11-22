@@ -13,7 +13,7 @@
         </p>
     </div>
 
-    <!-- Help Cards (Figma 14_Help Tips 1) -->
+    <!-- Help & Tips Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Tip 1 -->
         <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-3">

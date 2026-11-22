@@ -1,4 +1,4 @@
-<!-- Topbar Header Component (Figma Top Header) -->
+<!-- Topbar Header Component -->
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-30 border-b border-slate-200/80 px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
     <!-- Left: Mobile Menu Toggle & Breadcrumbs -->
     <div class="flex items-center gap-3">
@@ -28,7 +28,7 @@
 
     <!-- Right: Search Form & Quick Actions -->
     <div class="flex items-center gap-3 sm:gap-4">
-        <!-- Search Bar (Figma Search Input) -->
+        <!-- Search Bar -->
         <form action="{{ route('tasks.index') }}" method="GET" class="relative hidden sm:block">
             <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#61738e]">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

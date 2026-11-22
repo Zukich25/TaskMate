@@ -14,7 +14,7 @@
         </p>
     </div>
 
-    <!-- Filter & Action Controls Bar (Matches Figma 3_My Tasks 1 Controls) -->
+    <!-- Filter & Action Controls Bar -->
     <div class="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200/80 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         
         <!-- Search Input -->
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <!-- Tasks Management Table Card (Matches Figma Table Design) -->
+    <!-- Tasks Management Table Card -->
     <div class="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
         @if($tasks->count() > 0)
             <div class="overflow-x-auto">
@@ -203,7 +203,7 @@
                 </table>
             </div>
         @else
-            <!-- Zero State (Figma 15_Empty Tasks 1) -->
+            <!-- Empty State -->
             <div class="text-center py-16 px-4">
                 <div class="w-20 h-20 mx-auto rounded-3xl bg-blue-50 text-[#315fe8] flex items-center justify-center font-bold text-3xl mb-4 border border-blue-100 shadow-sm">
                     ▤

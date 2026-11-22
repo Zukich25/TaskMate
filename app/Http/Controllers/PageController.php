@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
-    /**
-     * Notifications Screen (Figma 12_Notifications 1)
-     */
+    // Notifications view
     public function notifications()
     {
         $upcomingTasks = Task::where('status', '!=', 'Completed')
@@ -20,9 +18,7 @@ class PageController extends Controller
         return view('pages.notifications', compact('upcomingTasks'));
     }
 
-    /**
-     * Profile & Settings Screen (Figma 13_Profile Settings 1)
-     */
+    // Student profile & settings view
     public function profile()
     {
         $user = Auth::user() ?? (object)[
@@ -33,9 +29,7 @@ class PageController extends Controller
         return view('pages.profile', compact('user'));
     }
 
-    /**
-     * Update Profile Settings
-     */
+    // Update profile information
     public function updateProfile(Request $request)
     {
         $request->validate([
@@ -49,9 +43,7 @@ class PageController extends Controller
         return back()->with('success', 'Profile updated successfully!');
     }
 
-    /**
-     * Help & Tips Screen (Figma 14_Help Tips 1)
-     */
+    // Help & tips view
     public function help()
     {
         return view('pages.help');

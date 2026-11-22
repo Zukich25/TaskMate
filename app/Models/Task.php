@@ -29,9 +29,7 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Helper to get clean human-readable due date string matching Figma
-     */
+    // Format due date for friendly display (Today, Tomorrow, or Month Day)
     public function getFormattedDueDateAttribute()
     {
         if (!$this->due_date) {

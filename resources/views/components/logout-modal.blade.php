@@ -1,4 +1,4 @@
-<!-- Logout Confirmation Modal (Figma 16_Logout Confirmation 2) -->
+<!-- Logout Confirmation Modal -->
 <div 
     x-show="showLogoutModal" 
     x-cloak

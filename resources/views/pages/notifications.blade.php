@@ -13,7 +13,7 @@
         </p>
     </div>
 
-    <!-- Notifications Card (Figma 12_Notifications 1) -->
+    <!-- Upcoming Tasks Notifications List -->
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4">
         <h3 class="text-base font-bold text-[#172b4d] mb-4">Upcoming Due Dates</h3>
 

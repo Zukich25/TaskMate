@@ -14,7 +14,7 @@
         </p>
     </div>
 
-    <!-- Hero Motivational Banner (Matches Figma 2_Dashboard 1 Hero) -->
+    <!-- Hero Motivational Banner -->
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#18345e] via-[#1e40af] to-[#315fe8] text-white p-6 sm:p-8 lg:p-10 shadow-lg shadow-blue-900/10">
         <!-- Background subtle accent shapes -->
         <div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <!-- "TODAY" Stat Pill from Figma -->
+            <!-- "TODAY" Stat Pill -->
             <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 text-center md:text-left min-w-[200px]">
                 <span class="text-[11px] font-bold tracking-wider uppercase text-blue-200 block">
                     Today
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <!-- 3 Stat Metrics Cards (Matches Figma Dashboard Stat Cards) -->
+    <!-- Stat Metrics Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
         <!-- Card 1: Total Tasks -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-center justify-between hover:shadow-md transition">
@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <!-- Upcoming Tasks Section (Matches Figma 2_Dashboard 1 Upcoming Section) -->
+    <!-- Upcoming Tasks Section -->
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
         <div class="flex items-center justify-between mb-6">
             <div>
@@ -186,7 +186,7 @@
                 @endforeach
             </div>
         @else
-            <!-- Zero State (Figma 15_Empty Tasks 1) -->
+            <!-- Empty State -->
             <div class="text-center py-12">
                 <div class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#315fe8] flex items-center justify-center font-bold text-2xl mb-3">
                     ✓

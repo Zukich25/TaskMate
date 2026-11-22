@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    /**
-     * Show the login screen (Figma 1_Login 1)
-     */
+    // Show login page
     public function showLogin()
     {
         if (Auth::check()) {
@@ -20,9 +18,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Handle login authentication
-     */
+    // Process student login
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -35,7 +31,7 @@ class AuthController extends Controller
             return redirect()->intended(route('dashboard'))->with('success', 'Welcome back, ' . Auth::user()->name . '!');
         }
 
-        // Demo convenience fallback: If credentials don't match, log in the demo student user
+        // Demo account fallback for evaluation
         $demoUser = User::where('email', 'Cabansay@gmail.com')->first();
         if ($demoUser && strtolower($request->email) === 'cabansay@gmail.com') {
             Auth::login($demoUser);
@@ -44,21 +40,17 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Invalid email or password.',
         ])->onlyInput('email');
     }
 
-    /**
-     * Show registration screen (Figma 4_SignUp 1)
-     */
+    // Show registration page
     public function showRegister()
     {
         return view('auth.register');
     }
 
-    /**
-     * Handle student registration
-     */
+    // Register a new student account
     public function register(Request $request)
     {
         $validated = $request->validate([
@@ -77,26 +69,20 @@ class AuthController extends Controller
         return redirect()->route('dashboard')->with('success', 'Account created successfully!');
     }
 
-    /**
-     * Show forgot password screen (Figma 5_Forgot Password 1)
-     */
+    // Show forgot password view
     public function showForgotPassword()
     {
         return view('auth.forgot-password');
     }
 
-    /**
-     * Handle password reset request
-     */
+    // Send reset instructions
     public function sendResetLink(Request $request)
     {
         $request->validate(['email' => ['required', 'email']]);
         return back()->with('status', 'A reset link has been dispatched to your email address.');
     }
 
-    /**
-     * Handle user logout
-     */
+    // Handle logout
     public function logout(Request $request)
     {
         Auth::logout();

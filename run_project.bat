@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 title TaskMate - Cordova Public College HCI Prototype
 echo ========================================================
 echo   TASKMATE - Student To-Do List & Workspace
@@ -12,9 +13,10 @@ echo Default Demo Credentials:
 echo Email:    Cabansay@gmail.com
 echo Password: password
 echo.
-echo Press Ctrl+C in this terminal window to stop the server.
+echo NOTE: KEEP THIS WINDOW OPEN while using TaskMate!
+echo (Closing this window will stop the server)
 echo.
 
 start "" "http://127.0.0.1:8000"
-"C:\xampp\php\php.exe" artisan serve --port=8000
+"C:\xampp\php\php.exe" artisan serve --host=127.0.0.1 --port=8000
 pause

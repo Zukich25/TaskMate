@@ -13,7 +13,7 @@
         </p>
     </div>
 
-    <!-- Edit Form Card (Figma 8_Edit Task 1) -->
+    <!-- Edit Task Form Card -->
     <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm">
         
         @if($errors->any())

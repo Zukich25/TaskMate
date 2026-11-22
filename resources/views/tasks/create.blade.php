@@ -14,7 +14,7 @@
         </p>
     </div>
 
-    <!-- Form Card (Matches Figma 7_Add Task 1) -->
+    <!-- New Task Form Card -->
     <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm">
         
         @if($errors->any())
@@ -129,7 +129,7 @@
                 >{{ old('description') }}</textarea>
             </div>
 
-            <!-- Buttons matching Figma 7_Add Task 1 (Cancel & Save Task) -->
+            <!-- Action Buttons (Cancel & Save Task) -->
             <div class="pt-4 flex items-center justify-end gap-4 border-t border-slate-100">
                 <a 
                     href="{{ route('tasks.index') }}" 

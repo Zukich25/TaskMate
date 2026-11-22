@@ -13,7 +13,7 @@
         </p>
     </div>
 
-    <!-- Student Info Card (Figma 13_Profile Settings 1) -->
+    <!-- Student Profile Information Card -->
     <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm space-y-8">
         
         <!-- Avatar & Name Header -->

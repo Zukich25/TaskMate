@@ -8,14 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of tasks (Figma 3_My Tasks 1)
-     */
+    // Task list view with search filter and status tabs (All, Pending, In progress, Completed)
     public function index(Request $request)
     {
         $query = Task::query();
 
-        // Search query
+        // Keyword search
         if ($request->filled('search')) {
             $search = $request->input('search');
             $query->where(function ($q) use ($search) {
@@ -35,7 +33,7 @@ class TaskController extends Controller
             $query->where('status', 'Completed');
         }
 
-        // Counts for tabs
+        // Tab count numbers
         $totalCount = Task::count();
         $pendingCount = Task::where('status', 'Pending')->count();
         $inProgressCount = Task::where('status', 'In progress')->count();
@@ -53,17 +51,13 @@ class TaskController extends Controller
         ));
     }
 
-    /**
-     * Show form to create a new task (Figma 7_Add Task 1)
-     */
+    // Show add new task form
     public function create()
     {
         return view('tasks.create');
     }
 
-    /**
-     * Store a newly created task
-     */
+    // Save a new task
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -87,9 +81,7 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with('success', 'Task "' . $task->title . '" added successfully!');
     }
 
-    /**
-     * Display the specified task details (Figma 6_Task Details 1)
-     */
+    // View task details
     public function show(Task $task, Request $request)
     {
         if ($request->wantsJson()) {
@@ -98,17 +90,13 @@ class TaskController extends Controller
         return view('tasks.show', compact('task'));
     }
 
-    /**
-     * Show form for editing task (Figma 8_Edit Task 1)
-     */
+    // Show edit task form
     public function edit(Task $task)
     {
         return view('tasks.edit', compact('task'));
     }
 
-    /**
-     * Update the specified task
-     */
+    // Update existing task
     public function update(Request $request, Task $task)
     {
         $validated = $request->validate([
@@ -130,9 +118,7 @@ class TaskController extends Controller
         return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
     }
 
-    /**
-     * Quick status toggle (Checkbox click in task list)
-     */
+    // Quick toggle task completed checkbox
     public function toggle(Task $task, Request $request)
     {
         $newStatus = $task->status === 'Completed' ? 'Pending' : 'Completed';
@@ -149,9 +135,7 @@ class TaskController extends Controller
         return back()->with('success', 'Task status updated to ' . $newStatus);
     }
 
-    /**
-     * Remove the specified task
-     */
+    // Delete task
     public function destroy(Task $task, Request $request)
     {
         $title = $task->title;

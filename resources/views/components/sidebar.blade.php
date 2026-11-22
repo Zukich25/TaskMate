@@ -1,4 +1,4 @@
-<!-- Navigation Sidebar Component (Figma Sidebar Layout) -->
+<!-- Navigation Sidebar Component -->
 <aside 
     :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
     class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:static lg:inset-auto"
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <!-- User Profile & Logout Bottom Card (Figma Style) -->
+    <!-- User Profile & Logout Bottom Card -->
     <div class="p-4 border-t border-slate-100 bg-slate-50/50">
         <div class="flex items-center justify-between mb-3 px-1">
             <div class="flex items-center gap-3 min-w-0">

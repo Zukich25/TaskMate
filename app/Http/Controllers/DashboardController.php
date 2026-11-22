@@ -8,9 +8,7 @@ use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
-    /**
-     * Show the Home / Dashboard screen (Figma 2_Dashboard 1)
-     */
+    // Main dashboard view showing task statistics and upcoming deadlines
     public function index()
     {
         $totalTasks = Task::count();
@@ -18,12 +16,12 @@ class DashboardController extends Controller
         $completedCount = Task::where('status', 'Completed')->count();
         $pendingCount = Task::where('status', 'Pending')->count();
 
-        // Tasks due today or upcoming
+        // Tasks due today that are not completed
         $todayTasksCount = Task::whereDate('due_date', Carbon::today())
             ->where('status', '!=', 'Completed')
             ->count();
 
-        // Recent upcoming tasks list
+        // Nearest upcoming tasks for quick preview
         $upcomingTasks = Task::where('status', '!=', 'Completed')
             ->orderBy('due_date', 'asc')
             ->take(5)

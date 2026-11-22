@@ -15,7 +15,7 @@
         </a>
     </div>
 
-    <!-- Details Card (Figma 6_Task Details 1) -->
+    <!-- Details Card -->
     <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm space-y-8">
         
         <!-- Header & Status Toggle -->

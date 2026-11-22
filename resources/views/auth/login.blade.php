@@ -7,7 +7,7 @@
     <!-- Outer Card Container -->
     <div class="w-full max-w-5xl bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
         
-        <!-- Left Hero Branding Column (Figma visual element) -->
+        <!-- Left Hero Branding Column -->
         <div class="lg:col-span-5 bg-gradient-to-br from-[#18345e] via-[#1e40af] to-[#315fe8] text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
             <!-- Decorative Orbit Curves -->
             <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full border border-white/10 pointer-events-none"></div>
@@ -33,7 +33,7 @@
                 </p>
             </div>
 
-            <!-- Motivational Card (From Figma Login) -->
+            <!-- Motivational Card -->
             <div class="relative z-10 mt-8 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-sm">
                 <span class="text-[11px] font-bold tracking-wider uppercase text-blue-200">Your week, in good hands</span>
                 <h3 class="text-xl font-bold mt-1 text-white">Plan. Focus. Finish.</h3>

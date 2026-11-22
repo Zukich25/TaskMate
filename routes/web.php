@@ -8,16 +8,16 @@ use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes - TaskMate HCI Prototype
+| Web Routes - TaskMate (Cabansay John Kenny C. - BSIT 3rd Year)
 |--------------------------------------------------------------------------
 */
 
-// Redirect root to dashboard (or login if guest)
+// Redirect to dashboard
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
-// Authentication Routes (Figma Screens 1, 4, 5, 16)
+// Student Authentication
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
@@ -25,16 +25,16 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
 Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout.get'); // Convenience for easy testing
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout.get');
 
-// Authenticated Application Screens
+// Dashboard Overview
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-// Tasks Feature Routes (Figma Screens 3, 6, 7, 8, 9, 10, 11, 15)
+// Task Management & Checkbox Toggle
 Route::resource('tasks', TaskController::class);
 Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle'])->name('tasks.toggle');
 
-// Auxiliary Workspace Pages (Figma Screens 12, 13, 14)
+// Workspace Auxiliary Views
 Route::get('/notifications', [PageController::class, 'notifications'])->name('notifications');
 Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 Route::post('/profile', [PageController::class, 'updateProfile'])->name('profile.update');
