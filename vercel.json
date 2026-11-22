@@ -2,15 +2,20 @@
   "version": 2,
   "framework": null,
   "buildCommand": "",
-  "outputDirectory": "public",
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.7.3"
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": "**"
     }
   },
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/(favicon\\.ico|robots\\.txt|.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map))",
+      "dest": "/public/$1"
     },
     {
       "src": "/(.*)",
